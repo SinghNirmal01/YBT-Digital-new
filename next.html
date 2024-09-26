@@ -75,14 +75,13 @@
 
     .carousel-container {
       position: relative;
-      background-color: #f5f5f5;
+      background-color: transparent;
       /* Light background */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      /* Light shadow */
+      backdrop-filter: blur(0.8);
       border-radius: 12px;
       padding: 10px;
       width: 100%;
-      /* Full width for responsive design */
+      max-width: 600px;
     }
 
     .carousel-track {
@@ -107,7 +106,7 @@
       height: auto;
       /* Maintain aspect ratio */
       border-radius: 12px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      
     }
 
     .carousel-button {
@@ -123,9 +122,7 @@
       border-radius: 50%;
     }
 
-    .carousel-button:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-    }
+
 
 
 
@@ -228,7 +225,7 @@
               <p class="text-gray-700 text-sm">Subscribers: <span class="font-bold">5,000</span></p>
             </div>
           </div>
-          <a href="https://youtube.com" class="bg-red-600 text-white text-sm py-2 px-4 rounded-full">Subscribe</a>
+          <a href="https://youtube.com" class="bg-red-600  text-white text-sm py-2 px-4 rounded-full">Subscribe</a>
         </div>
         <!-- Telegram -->
         <div class="bg-white rounded-lg shadow-lg p-5 flex items-center justify-between scale-up">
@@ -289,7 +286,7 @@
     <!-- Feedback Images Carousel -->
     <section class="mb-12 pop-up" >
       <h2 class="text-3xl font-semibold text-center mb-4">What Developers Are Saying</h2>
-      <div class="carousel-container relative overflow-hidden w-full max-w-4xl mx-auto bg-lightgray p-4 shadow-lg rounded-lg">
+      <div class="carousel-container relative overflow-hidden w-full max-w-4xl mx-auto bg-lightgray p-4 rounded-lg">
         <div class="carousel-track flex">
           <div class="carousel-item w-64 h-64 flex-shrink-0 p-2">
             <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFgYqpyHAGF0euIOm88F_5dKI7_Hsc8Cfe-8f1ItjGcPDzOZ3XQJsTlFTglC3t6wHUUKK6CUaqn9c9ORacEGvdMksjtbIRxAvcZqtLv71hRajhJ9WxEYHjrWUZ5yvbiv4KkcNvJFj1Q8Me2QQwwirIkT8NJxhDU_-6WyGat40qt5fX9FGvGoFD-5Z2hfFh/s1080/1.jpg" alt="Feedback 1" class="object-cover w-full h-full rounded-lg shadow-md">
