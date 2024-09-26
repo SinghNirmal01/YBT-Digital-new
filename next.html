@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Unlock the potential of ChatGPT with 100+ programming prompts in various languages. Perfect for developers of all levels.">
+  <meta name="keywords" content="ChatGPT, programming prompts, buy ebook, coding, Ruby, Python, Swift, Java">
+  <title>YBT Online</title>
+  
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  
+  <!-- font awesome cdn  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- gsap cdn -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+
+  <style>
+    /* Global Styles */
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      
+      background-color: #cdeae2;
+      /* Light greenish background */
+      color: black;
+      /* Black text for better contrast */
+      position: relative;
+      font-family: 'Arial', sans-serif;
+      padding: 0;
+      margin: 0;
+      
+    }
+
+.grid-background {
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px),
+                    linear-gradient(180deg, rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  opacity: 0.5;
+  animation: moveGrid 10s linear infinite;
+}
+@keyframes moveGrid {
+  from {
+    background-position: 0 0, 0 0;
+  }
+  to {
+    background-position:0 0, 100px 100px;
+  }
+}
+    /* Header and Footer Styling */
+    header,
+    footer {
+      background-color: #0fa37f;
+      /* Green background */
+      color: white;
+      /* White text */
+    }
+
+    /* Custom Animations */
+
+
+
+
+
+    .carousel-container {
+      position: relative;
+      background-color: #f5f5f5;
+      /* Light background */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      /* Light shadow */
+      border-radius: 12px;
+      padding: 10px;
+      width: 100%;
+      /* Full width for responsive design */
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.5s ease;
+      width: 100%;
+    }
+
+    .carousel-item {
+      min-width: 300px;
+      /* Minimum width for small screens */
+      height: auto;
+      /* Auto height for images */
+      flex-shrink: 0;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .carousel-item img {
+      max-width: 100%;
+      /* Prevent overflow */
+      height: auto;
+      /* Maintain aspect ratio */
+      border-radius: 12px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    .carousel-button {
+      width: 40px;
+      /* Adjust button size */
+      height: 40px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 50%;
+    }
+
+    .carousel-button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+
+
+    /* Responsive Text Sizes */
+    h1 {
+      font-size: 2.5rem;
+      /* Adjust font size for mobile */
+    }
+
+    h2 {
+      font-size: 2rem;
+      /* Adjust font size for mobile */
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      /* Adjust font size for mobile */
+    }
+
+    /* Ensure the footer text is responsive */
+    footer p {
+      font-size: 0.875rem;
+      /* Adjust footer text size */
+    }
+    
+    
+
+
+
+  </style>
+</head>
+
+<body class="relative">
+
+  <!-- Grid Background -->
+  <div class="grid-background"></div>
+
+  <!-- Header -->
+  <header class="shadow fade-in" id="header">
+    <div class="max-w-6xl mx-auto px-6 py-6 text-center">
+      <h1 class="text-4xl font-bold">YBT Online</h1>
+      <p class="mt-2 text-lg">Enhance your coding skills With ChatGPT</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto mt-8 px-4 z-10">
+    <!-- Product Showcase -->
+    <section class="text-center mb-12 fade-in" >
+      <div class="flex justify-center mb-4">
+
+
+<div class="fade-in">
+  <video autoplay muted loop playsinline class="hidden" id="eBook">
+    <source src="ebook.mp4" type="video/mp4">
+    <!-- You can add additional formats like WebM or Ogg if needed -->
+    Your browser does not support the video tag.
+  </video>
+  <img src="/ebook.jpg" alt="ebook.jpg" id="ebook">
+</div>
+
+
+      </div>
+      <p class="text-lg text-gray-700">
+        A comprehensive guide filled with over
+        <span class="highlight">HTML, CSS, JS, Ruby, Python, Java, Swift, and more!</span>
+      </p>
+      <a href="#purchase" class="mt-4 inline-block bg-blue-500 text-white py-2 px-6 rounded hover:bg-blue-600 transition duration-300">Get Your Copy</a>
+    </section>
+
+    <!-- About Section -->
+    <section class="mb-12 fade-in" >
+      <h2 class="text-3xl font-semibold text-center mb-4">About This Ebook</h2>
+      <p class="text-lg text-gray-700 text-center max-w-2xl mx-auto">
+        This ebook provides more than 100 carefully curated programming challenges across various languages like Ruby, Python, Swift, Rust, Java, and more. Perfect for improving your coding skills, building real-world projects, and learning new programming techniques.
+      </p>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="text-center mb-12 slide-right" >
+      <h2 class="text-3xl font-semibold mb-6">Follow Us</h2>
+      <div class="max-w-md mx-auto space-y-4">
+        <!-- Instagram -->
+        <div class="bg-white rounded-lg shadow-lg p-5 flex items-center justify-between scale-up">
+          <div class="flex items-center ">
+<i class="fa-brands fa-instagram fa-xl text-pink-500"></i>
+            <div class="ml-4">
+              <h3 class="text-lg font-semibold">Instagram</h3>
+              <p class="text-gray-700 text-sm">Followers: <span class="font-bold">10,000</span></p>
+            </div>
+          </div>
+          <a href="https://instagram.com" class="bg-pink-500 text-white text-sm py-2 px-4 rounded-full">Follow</a>
+        </div>
+        <!-- YouTube -->
+        <div class="bg-white rounded-lg shadow-lg p-5 flex items-center justify-between scale-up">
+          <div class="flex items-center">
+<i class="fa-brands fa-youtube fa-xl" style="color: #ff0000;"></i>
+            <div class="ml-4">
+              <h3 class="text-lg font-semibold">YouTube</h3>
+              <p class="text-gray-700 text-sm">Subscribers: <span class="font-bold">5,000</span></p>
+            </div>
+          </div>
+          <a href="https://youtube.com" class="bg-red-600 text-white text-sm py-2 px-4 rounded-full">Subscribe</a>
+        </div>
+        <!-- Telegram -->
+        <div class="bg-white rounded-lg shadow-lg p-5 flex items-center justify-between scale-up">
+          <div class="flex items-center">
+<i class="fa-brands fa-telegram fa-xl" style="color: #63E6BE;"></i>
+            <div class="ml-4">
+              <h3 class="text-lg font-semibold">Telegram</h3>
+              <p class="text-gray-700 text-sm">Members: <span class="font-bold">2,500</span></p>
+            </div>
+          </div>
+          <a href="https://telegram.org" class="bg-blue-500 text-white text-sm py-2 px-4 rounded-full">Join</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="mb-12 slide-left text-center" >
+      <h2 class="text-3xl font-semibold text-center mb-4">Key Features</h2>
+      <ul class="list-disc list-inside text-lg text-gray-700 max-w-lg mx-auto">
+        <li>Ruby: Task Scheduler with Notifications</li>
+        <li>Swift: Expense Tracker App</li>
+        <li>Rust: Password Manager</li>
+        <li>JavaScript: Real-Time Chat Application</li>
+        <li>Python: Automated Email Sender</li>
+      </ul>
+      <p class="text-center text-gray-700 mt-4">And 100+ more prompts for your development journey!</p>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="mb-12 fade-in" >
+      <h2 class="text-3xl font-semibold text-center mb-4">What Developers Are Saying</h2>
+      <div class="max-w-lg mx-auto space-y-4">
+        <div class="bg-white p-5 rounded-lg shadow-lg">
+          <p class="text-gray-700">"These prompts are amazing! They’ve helped me improve my skills and build real-world projects." - Developer A</p>
+        </div>
+        <div class="bg-white p-5 rounded-lg shadow-lg">
+          <p class="text-gray-700">"A must-have for any programmer looking to challenge themselves and grow." - Developer B</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="mb-12 fade-in" >
+      <h2 class="text-3xl font-semibold text-center mb-4">Frequently Asked Questions</h2>
+      <div class="max-w-2xl mx-auto space-y-6">
+        <div>
+          <h3 class="font-semibold text-xl">What languages are covered in this ebook?</h3>
+          <p class="text-gray-700">This ebook includes prompts for Ruby, Python, Swift, Rust, Go, JavaScript, and many more.</p>
+        </div>
+        <div>
+          <h3 class="font-semibold text-xl">Can beginners use this ebook?</h3>
+          <p class="text-gray-700">Yes, this ebook is designed for both beginners and experienced developers.</p>
+        </div>
+        <!-- Add more FAQs as needed -->
+      </div>
+    </section>
+
+    <!-- Feedback Images Carousel -->
+    <section class="mb-12 pop-up" >
+      <h2 class="text-3xl font-semibold text-center mb-4">What Developers Are Saying</h2>
+      <div class="carousel-container relative overflow-hidden w-full max-w-4xl mx-auto bg-lightgray p-4 shadow-lg rounded-lg">
+        <div class="carousel-track flex">
+          <div class="carousel-item w-64 h-64 flex-shrink-0 p-2">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFgYqpyHAGF0euIOm88F_5dKI7_Hsc8Cfe-8f1ItjGcPDzOZ3XQJsTlFTglC3t6wHUUKK6CUaqn9c9ORacEGvdMksjtbIRxAvcZqtLv71hRajhJ9WxEYHjrWUZ5yvbiv4KkcNvJFj1Q8Me2QQwwirIkT8NJxhDU_-6WyGat40qt5fX9FGvGoFD-5Z2hfFh/s1080/1.jpg" alt="Feedback 1" class="object-cover w-full h-full rounded-lg shadow-md">
+          </div>
+          <div class="carousel-item w-64 h-64 flex-shrink-0 p-2">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjeVHj206VzU0dwSwaohIEBE6wr7KlDN6kXVOM-Gh1xJ9erBnAyRCQlkB1OfJ76-U8rqFQ4kAArFcyWpVsdhET3d5lgvHW6eI8D6P4esVqJxcQ-IsTUN9zDyR4WmdlQgskkY2m1jy1LvdYu6-fBTgVGmKQkT9dmSUKXzlrS_D1LGyBpt7g-ajURQPjFDvS3/s1160/2.jpg" alt="Feedback 2" class="object-cover w-full h-full rounded-lg shadow-md">
+          </div>
+          <div class="carousel-item w-64 h-64 flex-shrink-0 p-2">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhRBNFHRTEMM9syRog-iQA1omWgsiQ5iQIfzqt8XUVP5Y8C5OHz7pKPeApwy55Gra2ygRVcSU9ztPLGhY2ffaFm2t1itj1Uqneh1im2siiNhR_k8eIPajI34_OVTeg04vFDWBn1oEKK0ligWyzk4YTKPd-NTXxGwglAtiKTyBSYmZO8wUrdyQHMEs6cXDNY/s1080/3.jpg" alt="Feedback 3" class="object-cover w-full h-full rounded-lg shadow-md">
+          </div>
+          <div class="carousel-item w-64 h-64 flex-shrink-0 p-2">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjjcUfZIbt2qt35sJ05xVGsBBsH84p0xt1ABhsX2tZkbCCrLpcCCfVR66_IY70yxCfjvbJVHe8k2co5g0IabjVgIX3sLTztvFlcAWQ61-OwDFXT95K4OhmPX3NIPKP3HCrAmPJj06PiOZvPDomBoXXeDLZA9qipgUWMWN68PBhAENyCefH8EV3DJ20dykor/s1280/4.jpg" alt="Feedback 4" class="object-cover w-full h-full rounded-lg shadow-md">
+          </div>
+          <div class="carousel-item w-64 h-64 flex-shrink-0 p-2">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiP7LbVgVJfZKsClxyIBw0nUan2cqJnyb0PZqQXWvLQT2GJBfbeCB8X9nphSMbuuMLBewbOG04uR2JgAg6LkkU9ZicZz9aUSBE_niz_eUNlXW3vy-eQrmgPJjer06X8GUE5fGuuKhvaLgCVEBnuF_vkVgbPOeFf9myYxNzZNj60N8JeiWZqYKWPZAxwP6Es/s1080/5.jpg" alt="Feedback 5" class="object-cover w-full h-full rounded-lg shadow-md">
+          </div>
+        </div>
+        <!-- Carousel Buttons -->
+        <button class="carousel-button left absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="prevSlide()">
+        <div class="absolute inset-0">
+        <i class="fa-solid fa-backward fa-xs" ></i>
+        </div>
+        </button>
+        <button class="carousel-button right absolute top-1/2 right-4 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full" onclick="nextSlide()">  <div class="absolute inset-0">
+        <i class="fa-solid fa-forward fa-xs" ></i>
+        </div></button>
+      </div>
+    </section>
+
+    <!-- Purchase Section -->
+    <section id="purchase" class="text-center mb-12 fade-in" >
+      <h2 class="text-3xl font-semibold mb-4">Purchase Your Ebook</h2>
+      <p class="text-lg text-gray-700 mb-4">Price: ₹39</p>
+      <a href="payment.html" class="bg-green-500 text-white py-2 px-6 rounded hover:bg-green-600 transition duration-300">Buy Now</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-6 shadow-inner fade-in" >
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
+      <p>Email: <a href="mailto:your-email@example.com" class="text-white hover:text-blue-300 transition">your-email@example.com</a></p>
+      <div class="mt-4">
+        <p>Follow us on:</p>
+        <div class="flex justify-center space-x-4 mt-2">
+          <a href="https://instagram.com" class="text-white hover:text-pink-300 transition duration-300 transform hover:scale-105">
+<i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://youtube.com" class="text-white hover:text-red-400 transition duration-300 transform hover:scale-105">
+<i class="fa-brands fa-youtube" ></i>
+          </a>
+          <a href="https://telegram.org" class="text-white hover:text-blue-300 transition duration-300 transform hover:scale-105">
+<i class="fa-brands fa-telegram" ></i>
+          </a>
+        </div>
+      </div>
+      <p class="mt-4">&copy; 2024 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- JavaScript for Carousel Functionality -->
+  <script>
+  
+  
+  const video = document.getElementById("eBook");
+const img = document.getElementById("ebook");
+
+// Listen for when the video is fully loaded and can play through
+video.addEventListener("canplaythrough", function () {
+  video.style.display = "block"; // Show the video
+  video.style.opacity = "1";     // Fade-in effect
+  img.style.display = "none";    // Hide the image
+  video.play();                  // Start playing the video
+});
+  
+  
+  
+  
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      const slides = document.querySelectorAll('.carousel-item');
+      const totalSlides = slides.length;
+      if (index >= totalSlides) currentSlide = 0;
+      if (index < 0) currentSlide = totalSlides - 1;
+      const track = document.querySelector('.carousel-track');
+      track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    function nextSlide() {
+      currentSlide++;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide--;
+      showSlide(currentSlide);
+    }
+
+    // Initialize the first slide
+    showSlide(currentSlide);
+
+    // Optional: Auto-slide functionality
+    setInterval(() => {
+      nextSlide();
+    }, 5000); // Change slide every 5 seconds
+  </script>
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  
+  
+  
+
+  gsap.utils.toArray(".fade-in").forEach((section) => {
+  gsap.from(section, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 100%",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+      
+    },
+    opacity: 0,
+    y: 50,
+    duration: 1.5,
+    ease: "power2.out"
+  });
+});
+
+
+gsap.utils.toArray(".slide-left").forEach((section) => {
+  gsap.from(section, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 100%",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+    
+    },
+   opacity:0,
+    y:-100,
+    duration: 1.5,
+    ease: "power2.out"
+  });
+});
+
+gsap.utils.toArray(".slide-right").forEach((section) => {
+  gsap.from(section, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 100%",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+    
+    },
+   opacity:0,
+    x: -100,
+    duration: 1.5,
+    ease: "power2.out"
+  });
+});
+
+
+
+gsap.utils.toArray(".pop-up").forEach((section) => {
+  gsap.from(section, {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 100%",
+      end: "bottom 50%",
+      toggleActions: "play none none reset",
+    
+      
+    },
+   opacity:0,
+    scale:0,
+    duration: 1.5
+  });
+});
+
+
+
+</script>
+ 
+</body>
+
+</html>
