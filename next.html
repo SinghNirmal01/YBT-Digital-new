@@ -10,7 +10,7 @@
   <meta name="keywords" content="ChatGPT, programming prompts, buy ebook, coding, Ruby, Python, Swift, Java">
   <title>YBT Online</title>
   
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
   
   <!-- font awesome cdn  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -106,6 +106,8 @@
       height: auto;
       /* Maintain aspect ratio */
       border-radius: 12px;
+      aspect-ratio:1/1;
+      background-size: cover;
       
     }
 
@@ -175,14 +177,18 @@
       <div class="flex justify-center mb-4">
 
 
+
+
 <div class="fade-in">
-  <video autoplay muted loop playsinline class="hidden" id="eBook">
+    <img class="my-4" src="https://blogger.googleusercontent.com/img/a/AVvXsEgNzIEZ_eL4PXuj7J62D4sXmparlgjo1McVKMf0NDUjzIKXTq3rDuA8GM5rDYieuScdkfzl8dWin8Om-sP8G9vlos7Ef75nN967OgdEVU_ADJbi_rjPIMS1H4DvRr3ThpyMeue3M2JUdp8WbUyyk-TCaV4hwiuxsWUf6vhF-zFenenEHAjM3bWL2WkukjA8" alt="ebook">
+  <video class="my-4" autoplay muted loop playsinline class="hidden" id="eBook">
     <source src="ebook.mp4" type="video/mp4">
     <!-- You can add additional formats like WebM or Ogg if needed -->
     Your browser does not support the video tag.
   </video>
-  <img src="/ebook.jpg" alt="ebook.jpg" id="ebook">
+  <img class="my-4" src="/ebook.jpg" alt="ebook.jpg" id="ebook">
 </div>
+
 
 
       </div>
@@ -317,13 +323,19 @@
     </section>
 
     <!-- Purchase Section -->
-    <section id="purchase" class="text-center mb-12 fade-in" >
-      <h2 class="text-3xl font-semibold mb-4">Purchase Your Ebook</h2>
-      <p class="text-lg text-gray-700 mb-4">Price: ₹39</p>
-      <a href="payment.html" class="bg-green-500 text-white py-2 px-6 rounded hover:bg-green-600 transition duration-300">Buy Now</a>
-    </section>
-  </main>
 
+  </main>
+    <section id="purchase" class="bg-emerald-200 text-white p-2 rounded-t-xl border-2 border-dashed border-teal-300 m-auto sticky bottom-0 w-full flex justify-around items-center md:w-auto md:sticky md:bottom-0">
+      
+
+
+      <p class="text-lg text-gray-700">Price: ₹49</p>
+      <a href="payment.html" class="bg-green-500 text-white py-2 px-6 rounded hover:bg-green-600 transition duration-300">Buy Now</a>
+      
+      
+      
+  
+    </section>
   <!-- Footer -->
   <footer class="py-6 shadow-inner fade-in" >
     <div class="max-w-6xl mx-auto text-center">
@@ -407,7 +419,7 @@ video.addEventListener("canplaythrough", function () {
     scrollTrigger: {
       trigger: section,
       start: "top 100%",
-      end: "bottom 50%",
+     
       toggleActions: "play none none reset",
       
     },
@@ -424,7 +436,7 @@ gsap.utils.toArray(".slide-left").forEach((section) => {
     scrollTrigger: {
       trigger: section,
       start: "top 100%",
-      end: "bottom 50%",
+    
       toggleActions: "play none none reset",
     
     },
@@ -440,7 +452,7 @@ gsap.utils.toArray(".slide-right").forEach((section) => {
     scrollTrigger: {
       trigger: section,
       start: "top 100%",
-      end: "bottom 50%",
+   
       toggleActions: "play none none reset",
     
     },
@@ -458,7 +470,7 @@ gsap.utils.toArray(".pop-up").forEach((section) => {
     scrollTrigger: {
       trigger: section,
       start: "top 100%",
-      end: "bottom 50%",
+    
       toggleActions: "play none none reset",
     
       
