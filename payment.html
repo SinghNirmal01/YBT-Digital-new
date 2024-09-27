@@ -154,8 +154,8 @@
         </div>
         <div class="w-full bg-teal-200 p-2 my-4 rounded-2xl border-2 border-dashed border-teal-300 text-center hidden" id="discount">
           <div class="text-emerald-600">coupon applied</div>
-          <span>49₹ - 30% =</span>
-          <span class="text-[1.2em] text-green-700">35 ₹</span>
+          <span id="calculation">49₹ - 30% =</span>
+          <span id="finalPrice" class="text-[1.2em] text-green-700">35 ₹</span>
         </div>
       </div>
       <button id="submit" type="submit" class="w-full bg-teal-600 text-white p-3 rounded-full hover:bg-teal-700 disabled:bg-gray-500 transition flex items-center justify-center" >
@@ -183,6 +183,25 @@
   </div>
 
   <script>
+  
+  let coupons , code , discount ;
+  
+  
+  fetch('http://localhost:3000/coupons')
+  .then(response => response.json())
+  .then(data =>{
+    coupons = data
+     codes = coupons.map(coupon => coupon.code);
+ discounts = coupons.map(coupon => coupon.discount);
+
+console.log('Codes:', codes);       // Output: ['DISCOUNT10', 'FREESHIP']
+console.log('Discounts:', discounts); // Output: ['10%', 'Free Shipping']
+
+  })
+  .catch(error => console.error('Error:', error));
+  
+  
+  
     // Copy UPI function
     function copyUPI() {
       const upiText = "brajendrayoubtech062@fam";
@@ -197,31 +216,51 @@
 
 
     document.getElementById('checkcoupon').addEventListener('click', (e) => {
-      e.preventDefault()
-      e.stopPropagation()
+  e.preventDefault();
+  e.stopPropagation();
 
-      let coupon = document.getElementById('coupon').value
-      if (coupon == 'YBT30') {
-        document.getElementById('coupon').style.color = 'green'
-        document.getElementById('checkcoupon').style.background = 'rgba(0,255,0,0.5)'
-        document.getElementById('submit').disabled = false
-        document.getElementById('discount').style.display = 'block'
-        document.getElementById('price').innerHTML = 'Buy With 35₹'
-      }
-      else if (coupon == '') {
-        document.getElementById('submit').disabled = false
-        document.getElementById('discount').style.display = 'none'
-        document.getElementById('price').innerHTML = 'Buy With 49₹'
-      }
-      else {
-        document.getElementById('coupon').style.color = 'red'
-        document.getElementById('checkcoupon').style.background = 'rgba(255,0,0,0.5)'
-        document.getElementById('submit').disabled = true
-        document.getElementById('discount').style.display = 'none'
-        document.getElementById('price').innerHTML = 'Buy With 49₹'
-      }
+  
 
-    })
+
+  let inputCoupon = document.getElementById('coupon').value;
+
+  // Find the coupon from the array
+  let coupon = coupons.find(c => c.code === inputCoupon);
+
+  if (coupon) {
+    // If coupon is valid
+    document.getElementById('coupon').style.color = 'green';
+    document.getElementById('checkcoupon').style.background = 'rgba(0,255,0,0.5)';
+    document.getElementById('submit').disabled = false;
+    document.getElementById('discount').style.display = 'block';
+
+    // Apply the discount dynamically
+    let basePrice = 49; // Original price
+    let discountedPrice = basePrice * Number(coupon.discount)/100
+    let finalPrice = Math.round(basePrice - discountedPrice)
+    document.getElementById('price').innerHTML = `Buy With ${finalPrice}₹`;
+    console.log(finalPrice, discountedPrice)
+    
+    document.getElementById('calculation').innerHTML = `${basePrice} - ${discountedPrice} =`
+    document.getElementById('finalPrice').innerHTML = finalPrice + '₹'
+
+  } else if (inputCoupon === '') {
+    // If no coupon entered, set default state
+    document.getElementById('submit').disabled = false;
+    document.getElementById('discount').style.display = 'none';
+    document.getElementById('price').innerHTML = 'Buy With 49₹';
+
+  } else {
+    // If coupon is invalid
+    document.getElementById('coupon').style.color = 'red';
+    document.getElementById('checkcoupon').style.background = 'rgba(255,0,0,0.5)';
+    document.getElementById('submit').disabled = true;
+    document.getElementById('discount').style.display = 'none';
+    document.getElementById('price').innerHTML = 'Buy With 49₹';
+  }
+});
+    
+    
     // Show Loader and Handle Form Submission
     const paymentForm = document.getElementById("paymentForm");
     const btnLoader = paymentForm.querySelector('.loader');
@@ -274,6 +313,12 @@
       const modal = document.getElementById("orderModal");
       modal.classList.add("hidden");
     }
+    
+    
+   
+    
+  
+    
   </script>
 </body>
 
