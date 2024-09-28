@@ -67,6 +67,9 @@
     #copyBtn:active {
       box-shadow: 4px 4px 2px #0f766e inset;
     }
+    #iconLoader{
+      animation: spin 2s ease-out infinite;
+    }
   </style>
 </head>
 
@@ -148,8 +151,10 @@
         <label for="coupon" class="block text-teal-700">coupon code</label>
         <div class="flex border border-teal-300 rounded hover:outline-none hover:ring-2 hover:ring-teal-500">
           <input type="text" id="coupon" name="coupon" class="w-full p-2 font-bold transition focus:outline-none ">
-          <button type="button" id="checkcoupon" class="p-2 bg-blue-100 rounded-full w-10 h-10">
-            <i class=" fa-solid fa-check"></i>
+          <button type="button" id="checkcoupon" class="p-2 bg-blue-100 rounded-full w-10 h-10 flex justify-center items-center">
+            <i id="iconCheck" class=" fa-solid fa-check "></i>
+<i id="iconLoader" class="fa-solid fa-spinner hidden"></i>
+
           </button>
         </div>
         <div class="w-full bg-teal-200 p-2 my-4 rounded-2xl border-2 border-dashed border-teal-300 text-center hidden" id="discount">
@@ -187,9 +192,11 @@
   let coupons , code , discount ;
   
   
-  fetch('http://localhost:3000/coupons')
+  fetch('https://coupons-api.onrender.com/coupons')
   .then(response => response.json())
   .then(data =>{
+    document.getElementById('iconLoader').style.display = 'none'
+    
     coupons = data
      codes = coupons.map(coupon => coupon.code);
  discounts = coupons.map(coupon => coupon.discount);
@@ -216,6 +223,9 @@ console.log('Discounts:', discounts); // Output: ['10%', 'Free Shipping']
 
 
     document.getElementById('checkcoupon').addEventListener('click', (e) => {
+      
+      document.getElementById('iconCheck').style.diaplay = 'none'
+      
   e.preventDefault();
   e.stopPropagation();
 
